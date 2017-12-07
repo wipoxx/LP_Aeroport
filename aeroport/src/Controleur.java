@@ -26,7 +26,6 @@ public class Controleur {
         System.out.println("**************************************");
         aeroport.afficherAvions();
         System.out.println("**************************************");
-
     }
 
     private static int demanderChoix(Scanner scanner) {
