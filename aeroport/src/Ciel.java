@@ -1,8 +1,13 @@
 public class Ciel extends Thread {
-    private Avion[] listeAvion;
-    private  ILieuAtterrissage[] pistes;
+    private Avion avion;
+    private  ILieuAtterrissage piste;
 
     public Ciel(){
-        
+        this.run();
+    }
+
+    @Override
+    public void run(){
+
     }
 }

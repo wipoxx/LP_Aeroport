@@ -7,6 +7,7 @@ public abstract class Avion {
     public Avion(int qteEssence, String type, int numSerie) {
         typeAvion = type;
         essence = qteEssence;
+        this.numSerie = numSerie;
     }
 
     public int getEssence() {
