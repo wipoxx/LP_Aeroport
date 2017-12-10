@@ -5,13 +5,13 @@ public class Controleur {
 
     public static void main(String[] args) {
         boolean quitter = false;
-        Scanner entree = new Scanner(System.in);
-
-        while (quitter != true) {
+       // Scanner entree = new Scanner(System.in);
+        Ciel c = new Ciel();
+      /*  while (quitter != true) {
             afficherAvionsetPistes();
             afficherMenu();
             quitter = demanderChoix(entree) == 0;
-        }
+        }*/
     }
 
     private static void afficherMenu() {

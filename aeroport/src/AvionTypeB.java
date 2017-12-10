@@ -1,5 +1,5 @@
 public class AvionTypeB extends Avion {
-    public AvionTypeB(int qteEssence, String type){
+    public AvionTypeB(){
         super(5, "B", 30);
     }
 }

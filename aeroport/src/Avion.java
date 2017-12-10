@@ -23,4 +23,8 @@ public abstract class Avion {
     }
 
     //Ajouter le toString de type  (NS:5, ESS:7) Super JET UQAC
+    @Override
+    public String toString(){
+        return "(NS:"+numSerie+", ESS:"+essence+") "+typeAvion;
+    }
 }
