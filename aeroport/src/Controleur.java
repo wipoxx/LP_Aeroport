@@ -1,17 +1,19 @@
 import java.util.Scanner;
 
 public class Controleur {
-    private static final ITourControle aeroport = new Aeroport();
+    private static final Aeroport aeroport = new Aeroport();
 
     public static void main(String[] args) {
         boolean quitter = false;
-       // Scanner entree = new Scanner(System.in);
-        Ciel c = new Ciel();
-      /*  while (quitter != true) {
+        Scanner entree = new Scanner(System.in);
+        Ciel c = new Ciel(aeroport);
+        c.start();
+        while (quitter != true) {
+
             afficherAvionsetPistes();
             afficherMenu();
             quitter = demanderChoix(entree) == 0;
-        }*/
+        }
     }
 
     private static void afficherMenu() {

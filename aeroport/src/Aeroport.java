@@ -46,6 +46,6 @@ public class Aeroport implements ITourControle, ILieuAtterrissage {
 
     @Override
     public void survoler(Avion a) {
-        lAvionsCiel.add(a.getNumSerie(), a);
+        lAvionsCiel.add( a);
     }
 }

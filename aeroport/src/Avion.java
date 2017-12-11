@@ -2,12 +2,14 @@ public abstract class Avion {
 
     private int essence;
     private String typeAvion;
-    private int numSerie;
+    private int numSerie = 0;
 
+    protected static int compteur = 0;
     public Avion(int qteEssence, String type, int numSerie) {
         typeAvion = type;
         essence = qteEssence;
         this.numSerie = numSerie;
+        this.compteur++;
     }
 
     public int getEssence() {
