@@ -8,12 +8,13 @@ public class Controleur {
         Scanner entree = new Scanner(System.in);
         Ciel c = new Ciel(aeroport);
         c.start();
-        while (quitter != true) {
 
+        while (quitter != true) {
             afficherAvionsetPistes();
             afficherMenu();
             quitter = demanderChoix(entree) == 0;
         }
+        System.exit(0);
     }
 
     private static void afficherMenu() {
@@ -36,7 +37,12 @@ public class Controleur {
         int res = -1;
         switch (choix1) {
             case 1:
-                aeroport.faireSurvolerAvion();
+                try {
+                    aeroport.faireSurvolerAvion();
+                } catch (EcrasementException ecrasementExc) {
+                    ecrasementExc.printStackTrace();
+                    System.exit(1);
+                }
                 break;
 
             case 2:
@@ -48,7 +54,8 @@ public class Controleur {
                 try {
                     aeroport.faireAtterirAvion(numSerie, piste);
                 } catch (EcrasementException ecrasementExc) {
-                    ecrasementExc.getMessage();
+                    ecrasementExc.printStackTrace();
+                    System.exit(1);
                 }
                 break;
 

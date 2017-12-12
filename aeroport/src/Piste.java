@@ -5,7 +5,7 @@ public class Piste {
 
     public Piste(int numPiste) {
         this.numPiste = numPiste;
-        this.nbTours = 0;
+        this.nbTours = 1;
         this.avionAtterri = null;
     }
 
@@ -15,6 +15,7 @@ public class Piste {
                 this.nbTours++;
             } else {
                 this.avionAtterri = null;
+                this.nbTours = 1;
             }
         }
 
@@ -24,7 +25,7 @@ public class Piste {
         if (this.avionAtterri == null) {
             this.avionAtterri = avion;
         } else {
-            throw new EcrasementException();
+            throw new EcrasementException(avion.toString());
         }
     }
 

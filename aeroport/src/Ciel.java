@@ -3,10 +3,10 @@ import java.lang.reflect.InvocationTargetException;
 
 public class Ciel extends Thread {
     private Avion avion;
-    private  ILieuAtterrissage piste;
+    private ILieuAtterrissage piste;
 
-    public Ciel(ILieuAtterrissage aeroport){
-        piste =aeroport;
+    public Ciel(ILieuAtterrissage aeroport) {
+        piste = aeroport;
     }
 
     @Override
@@ -38,9 +38,7 @@ public class Ciel extends Thread {
                 e.printStackTrace();
 
             } catch (IllegalArgumentException e) {
-
                 e.printStackTrace();
-
             } catch (IllegalAccessException e) {
                 e.printStackTrace();
             } catch (InstantiationException e) {

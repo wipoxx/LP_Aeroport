@@ -28,15 +28,32 @@ public class Aeroport implements ITourControle, ILieuAtterrissage {
 
     @Override
     public void faireAtterirAvion(int numeroSerie, int numPiste) throws EcrasementException {
+        for (Piste piste : this.lPistes) {
+            piste.passerTour();
+        }
+
         if (1 <= numPiste && numPiste <= 3) {
-            this.lPistes.get(numPiste).setAvionAtterri(lAvionsCiel.get(numeroSerie));
+            Avion a = null;
+            for(Avion avion : this.lAvionsCiel) {
+                if (avion.getNumSerie() == numeroSerie) {
+                    a = avion;
+                }
+            }
+
+            this.lPistes.get(numPiste-1).setAvionAtterri(a);
+            this.lAvionsCiel.remove(a);
+
         }
     }
 
     @Override
-    public void faireSurvolerAvion() {
+    public void faireSurvolerAvion() throws EcrasementException {
         for (Piste piste : this.lPistes) {
             piste.passerTour();
+        }
+
+        for (Avion a : this.lAvionsCiel) {
+            a.setEssence(a.getEssence()-1);
         }
     }
 
@@ -46,6 +63,16 @@ public class Aeroport implements ITourControle, ILieuAtterrissage {
 
     @Override
     public void survoler(Avion a) {
-        lAvionsCiel.add( a);
+        lAvionsCiel.add(a);
+    }
+
+    public Avion getAvionByNumeroSerie(int ns) {
+        Avion a = null;
+        for (Avion avion : this.lAvionsCiel) {
+            if (avion.getNumSerie() == ns) {
+             a = avion;
+            }
+        }
+        return a;
     }
 }

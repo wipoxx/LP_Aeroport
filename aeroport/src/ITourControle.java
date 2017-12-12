@@ -3,5 +3,5 @@ public interface ITourControle {
 
     public void faireAtterirAvion(int numeroSerie, int numPiste) throws EcrasementException;
 
-    public void faireSurvolerAvion();
+    public void faireSurvolerAvion() throws EcrasementException;
 }
